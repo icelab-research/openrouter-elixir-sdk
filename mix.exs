@@ -45,7 +45,7 @@ defmodule OpenrouterSdk.MixProject do
     "Unofficial Elixir SDK for the OpenRouter API: chat, anthropic messages, " <>
       "embeddings, speech, transcription, OAuth PKCE, and a versioned " <>
       "model/provider catalog. Not affiliated with or endorsed by the " <>
-      "OpenRouter team. Maintained by the San Francisco Voice Company."
+      "OpenRouter team. Maintained by Ice Lab."
   end
 
   defp package do

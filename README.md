@@ -4,9 +4,8 @@ elixir sdk for [openrouter](https://openrouter.ai). thin, finch-based,
 ships zero policy.
 
 > unofficial. not affiliated with, supported by, or endorsed by the
-> openrouter team. maintained by the [san francisco voice
-> company](https://github.com/sf-voice) — get in touch at
-> [contact@sf-voice.sh](mailto:contact@sf-voice.sh).
+> openrouter team. maintained by [ice lab](https://icelab.sh) — get in touch at
+> [contact@icelab.sh](mailto:contact@icelab.sh).
 
 supports:
 
