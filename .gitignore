@@ -23,3 +23,8 @@ openrouter_sdk-*.tar
 /tmp/
 
 .env
+
+# repository decisions live in the canonical agent memory
+!/agents/
+/agents/*
+!/agents/MEMORY.md

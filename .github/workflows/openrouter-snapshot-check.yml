@@ -1,10 +1,7 @@
 name: openrouter snapshot check
 
 on:
-  pull_request:
-    paths:
-      - "priv/openrouter/**"
-      - "lib/mix/tasks/openrouter.snapshot.ex"
+  workflow_dispatch:
 
 jobs:
   verify:

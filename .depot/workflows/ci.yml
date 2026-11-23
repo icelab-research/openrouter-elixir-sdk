@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "priv/**"
+      - "mix.exs"
+      - "mix.lock"
+      - ".formatter.exs"
+      - "config/**"
+      - ".github/workflows/ci.yml"
+      - ".depot/workflows/ci.yml"
+  pull_request:
+    paths:
+      - "lib/**"
+      - "test/**"
+      - "priv/**"
+      - "mix.exs"
+      - "mix.lock"
+      - ".formatter.exs"
+      - "config/**"
+      - ".github/workflows/ci.yml"
+      - ".depot/workflows/ci.yml"
+
+jobs:
+  test:
+    runs-on: depot-ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: erlef/setup-beam@v1
+        env:
+          ImageOS: ubuntu24
+        with:
+          otp-version: "27"
+          elixir-version: "1.18"
+
+      - name: cache deps
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          restore-keys: ${{ runner.os }}-mix-
+
+      - run: mix deps.get
+      - run: mix format --check-formatted
+      - run: mix compile --warnings-as-errors
+      - run: mix test
