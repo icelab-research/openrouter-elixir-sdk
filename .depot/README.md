@@ -15,9 +15,9 @@ This avoids duplicate publishing, deployment or mirror jobs.
 The workflow YAML and affected-source filters were checked locally. No production
 release, protected deployment, mirror push or catalog-refresh PR was used as a test.
 Native validation still needs a successful run using the chosen Depot organization.
-The CLI currently reports no matching Code Access connection and rejects native
-run creation as unauthorized, even though GitHub reports the app installed.
-Resolve that organization connection before merging. Do not import production
+Code Access is verified using the organization selected in the owner's dashboard.
+Earlier unauthorized attempts used another organization. Retry remote validation
+on the pushed branch head before merging. Do not import production
 secrets wholesale or change protected-environment controls to work around it.
 
 Merging `.depot/workflows` activates its automatic triggers. Do not merge while

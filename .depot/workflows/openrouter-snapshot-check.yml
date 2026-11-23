@@ -13,12 +13,14 @@ on:
 
 jobs:
   verify:
-    runs-on: depot-ubuntu-latest
+    runs-on: depot-ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
       - uses: erlef/setup-beam@v1
+        env:
+          ImageOS: ubuntu24
         with:
           otp-version: "27"
           elixir-version: "1.18"
