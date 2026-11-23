@@ -20,3 +20,13 @@ remain manual fallbacks. Protected preview remains GitHub-orchestrated. See
 setup-beam. Depot does not populate the GitHub image metadata that the action uses.
 **Validation:** Workflow parsing and runner/metadata consistency checks pass.
 Remote commit fetch failed before execution; retry the new pushed head.
+
+## [2026-11-23] — Refresh the catalog required by the strict snapshot gate
+**What was decided:** Regenerate the three committed catalog files with the existing
+`mix openrouter.snapshot` task after native CI reported drift. Keep the live
+upstream comparison enabled. Model entries changed from 368 to 477 and providers
+from 81 to 123; upstream added 268 model IDs and removed 159 old IDs.
+**Why:** The committed model/provider catalog and date were stale. The refresh
+uses public upstream metadata and does not publish a release or call paid models.
+**Validation:** Formatter, warnings-as-errors compilation, all 35 SDK tests and
+`mix openrouter.snapshot --check` pass locally; dependencies/lockfile are unchanged.
