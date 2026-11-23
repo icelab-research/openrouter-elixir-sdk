@@ -1,29 +1,7 @@
 name: ci
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "lib/**"
-      - "test/**"
-      - "priv/**"
-      - "mix.exs"
-      - "mix.lock"
-      - ".formatter.exs"
-      - "config/**"
-      - ".github/workflows/ci.yml"
-      - ".depot/workflows/ci.yml"
-  pull_request:
-    paths:
-      - "lib/**"
-      - "test/**"
-      - "priv/**"
-      - "mix.exs"
-      - "mix.lock"
-      - ".formatter.exs"
-      - "config/**"
-      - ".github/workflows/ci.yml"
-      - ".depot/workflows/ci.yml"
+  workflow_dispatch:
 
 jobs:
   test:

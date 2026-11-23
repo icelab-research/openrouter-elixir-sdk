@@ -1,10 +1,7 @@
 name: openrouter snapshot drift
 
 on:
-  schedule:
-    # daily at 06:00 utc — adjust to taste
-    - cron: "0 6 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   contents: write

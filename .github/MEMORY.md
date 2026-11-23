@@ -10,3 +10,7 @@ Depot configuration before activating that executor.
 build inputs, or changing signing and publication behavior as part of filtering.
 **Validation:** Parsed both executor configurations and checked source, dependency,
 workflow and unrelated-document scenarios locally. Remote execution is pending.
+
+**Migration:** Native Depot owns compatible automatic triggers; GitHub definitions
+remain manual fallbacks. Protected preview remains GitHub-orchestrated. See
+[`../.depot/README.md`](../.depot/README.md) for ownership, validation and rollback.

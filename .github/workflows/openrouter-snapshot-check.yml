@@ -1,15 +1,7 @@
 name: openrouter snapshot check
 
 on:
-  pull_request:
-    paths:
-      - "priv/openrouter/**"
-      - "lib/**"
-      - "config/**"
-      - "mix.exs"
-      - "mix.lock"
-      - ".github/workflows/openrouter-snapshot-check.yml"
-      - ".depot/workflows/openrouter-snapshot-check.yml"
+  workflow_dispatch:
 
 jobs:
   verify:
