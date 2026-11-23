@@ -4,7 +4,12 @@ on:
   pull_request:
     paths:
       - "priv/openrouter/**"
-      - "lib/mix/tasks/openrouter.snapshot.ex"
+      - "lib/**"
+      - "config/**"
+      - "mix.exs"
+      - "mix.lock"
+      - ".github/workflows/openrouter-snapshot-check.yml"
+      - ".depot/workflows/openrouter-snapshot-check.yml"
 
 jobs:
   verify:
